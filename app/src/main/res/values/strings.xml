@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Andruino</string>
+    <string name="button1">Interfon1</string>
+    <string name="button2">Dnevna soba1</string>
+    <string name="button3">Vikendica1</string>
+</resources>
