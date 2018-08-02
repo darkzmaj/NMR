@@ -14,42 +14,38 @@
         android:layout_alignParentTop="true"
 
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="48dp"
         android:text="Aplikacija za projekat iz NMR-a"
         android:textSize="24sp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="100dp"
 
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="141dp"
-        android:layout_marginStart="17dp"
-        android:text="@string/button1"
-        tools:text="Interfon" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="131dp"
+        android:text="@string/button1" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
 
-        android:layout_alignParentEnd="true"
-
-        android:layout_alignTop="@+id/button"
-        android:layout_marginEnd="19dp"
-        android:text="@string/button3"
-        tools:text="Vikendica" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="154dp"
+        android:text="@string/button2" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
 
-        android:layout_alignTop="@+id/button"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/button3"
-        tools:text="Dnevna soba" />
+        android:layout_marginBottom="32dp"
+        android:text="@string/button3" />
 
 </RelativeLayout>
