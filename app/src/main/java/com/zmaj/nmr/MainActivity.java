@@ -32,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
                 openActivity3();
             }
         });
+
+        vikendica = (Button) findViewById(R.id.button3);
+        vikendica.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openActivity4();
+            }
+        });
     }
     public void openActivity2(){
         Intent intent = new Intent(this, Activity2.class);
@@ -42,4 +50,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Activity3.class);
         startActivity(intent);
     }
+
+    public void openActivity4(){
+        Intent intent = new Intent(this, Activity4.class);
+        startActivity(intent);
+    }
+
 }
