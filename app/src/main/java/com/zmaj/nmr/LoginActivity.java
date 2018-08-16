@@ -6,7 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -15,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView info;
     private Button Login;
     private ImageButton imgDugme;
+    private ImageView image;
 
 
 
@@ -41,14 +47,23 @@ imgDugme = (ImageButton)findViewById(R.id.imageButton);
             public void onClick(View view) {
                 validate(pin.getText().toString());
 
+
             }
         });
 
     }
     private void validate(String pin){
-        if(pin.equals("1234")){
+        if(pin.equals("")){
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Toast.makeText(LoginActivity.this, "Tacna sifra", Toast.LENGTH_LONG).show();
             startActivity(intent);
+            //pokusaj deleja izaziva da app padne
+
+            //
+
+        }
+        else{
+            Toast.makeText(LoginActivity.this, "Pogresna sifra", Toast.LENGTH_LONG).show();
         }
     }
 

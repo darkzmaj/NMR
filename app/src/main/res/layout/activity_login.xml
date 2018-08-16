@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Login"
+        android:text="@string/login"
         android:visibility="invisible" />
 
     <ImageView
@@ -32,14 +32,6 @@
         android:visibility="visible"
         app:srcCompat="@drawable/lep_login_dugme" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp"
-        android:text="Primer numerickog logina" />
-
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
@@ -48,6 +40,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="112dp"
         android:ems="10"
+        android:drawableLeft="@drawable/ic_lock"
         android:hint="@string/pin_broj"
         android:inputType="numberPassword" />
 
