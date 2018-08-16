@@ -59,4 +59,14 @@
         android:layout_alignParentEnd="true"
         android:text="Jovan Jovanović" />
 
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:text="Button" />
+
 </RelativeLayout>

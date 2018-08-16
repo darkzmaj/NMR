@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -13,6 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText pin;
     private TextView info;
     private Button Login;
+    private ImageButton imgDugme;
 
 
 
@@ -22,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         pin = (EditText)findViewById(R.id.editText);
         // info = (TextView)findViewById(R.id.textView);
+
         Login = (Button) findViewById(R.id.btnLogin);
 //bitno samo 'new onCl' i autocomplete ce da odradi za login
         Login.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +35,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+imgDugme = (ImageButton)findViewById(R.id.imageButton);
+        imgDugme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validate(pin.getText().toString());
+
+            }
+        });
 
     }
     private void validate(String pin){

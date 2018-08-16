@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private Button interfonBut;
     private Button dnevnaSobaBut;
     private Button vikendica;
+    private Button test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
                 openActivity4();
             }
         });
+
+        test = (Button) findViewById(R.id.button7);
+        test.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openActivity5();
+            }
+        });
     }
     public void openActivity2(){
         Intent intent = new Intent(this, Activity2.class);
@@ -55,5 +64,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Activity4.class);
         startActivity(intent);
     }
+
+    public void openActivity5(){
+        Intent intent = new Intent(this, activity5.class);
+        startActivity(intent);
+    }
+
+
 
 }

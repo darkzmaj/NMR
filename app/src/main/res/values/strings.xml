@@ -4,4 +4,12 @@
     <string name="button2">Dnevna soba</string>
     <string name="button3">Vikendica</string>
     <string name="glavni_meni">Glavni meni</string>
+    <string name="title_activity_main2">Andruino</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">NMR Projekat</string>
+    <string name="nav_header_subtitle">abc.j.jovan@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="pin_broj">PIN broj</string>
 </resources>
