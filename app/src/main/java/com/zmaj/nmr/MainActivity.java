@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivity5(){
-        Intent intent = new Intent(this, activity5.class);
+        Intent intent = new Intent(this, DrawerMain.class);
         startActivity(intent);
     }
 

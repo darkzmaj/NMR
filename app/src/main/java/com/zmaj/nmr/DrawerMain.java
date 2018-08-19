@@ -1,5 +1,6 @@
 package com.zmaj.nmr;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,25 +13,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
 
-public class Main2Activity extends AppCompatActivity
+public class DrawerMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    Button interfon;
+    Button dnevnaSoba;
+    Button spavacaSoba;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.drawer_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,7 +41,48 @@ public class Main2Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        interfon = (Button) findViewById(R.id.btnInterfon);
+        interfon.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openActivity2();
+            }
+        });
+
+        dnevnaSoba = (Button) findViewById(R.id.btnDnevnaSoba);
+        dnevnaSoba.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openActivity3();
+            }
+        });
+
+        spavacaSoba = (Button) findViewById(R.id.btnSpavacaSoba);
+        spavacaSoba.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openActivity4();
+            }
+        });
+
     }
+    public void openActivity2(){
+        Intent intent = new Intent(this, Activity2.class);
+        startActivity(intent);
+    }
+
+    public void openActivity3(){
+        Intent intent = new Intent(this, Activity3.class);
+        startActivity(intent);
+    }
+
+    public void openActivity4(){
+        Intent intent = new Intent(this, Activity4.class);
+        startActivity(intent);
+    }
+
+
 
     @Override
     public void onBackPressed() {
@@ -55,7 +97,7 @@ public class Main2Activity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main2, menu);
+        getMenuInflater().inflate(R.menu.drawer_main, menu);
         return true;
     }
 
@@ -80,17 +122,18 @@ public class Main2Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.g_meni) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            Intent intent = new Intent(this, DrawerMain.class);
+            startActivity(intent);
+        } else if (id == R.id.interfon) {
+            Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
+            startActivity(intent);
+        } else if (id == R.id.dnevna_soba) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.drugi_uredjaji) {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.info) {
 
         }
 

@@ -54,7 +54,7 @@ imgDugme = (ImageButton)findViewById(R.id.imageButton);
     }
     private void validate(String pin){
         if(pin.equals("")){
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, DrawerMain.class);
             Toast.makeText(LoginActivity.this, "Tacna sifra", Toast.LENGTH_LONG).show();
             startActivity(intent);
             //pokusaj deleja izaziva da app padne

@@ -36,7 +36,7 @@ public class Activity2 extends AppCompatActivity {
         });
     }
     public void glavniMeni(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, DrawerMain.class);
 
         startActivity(intent);
     }

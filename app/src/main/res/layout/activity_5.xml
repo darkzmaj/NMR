@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity5">
+    tools:context=".Activity5">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -19,7 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="275dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="122dp"
+        android:layout_marginEnd="138dp"
         android:text="Button" />
+
 </RelativeLayout>

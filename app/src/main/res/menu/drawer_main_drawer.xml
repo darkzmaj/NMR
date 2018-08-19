@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/g_meni"
+            android:icon="@drawable/ic_kucica"
+            android:title="@string/glavni_meni" />
+        <item
+
+            android:id="@+id/interfon"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Interfon" />
+        <item
+            android:id="@+id/dnevna_soba"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Dnevna soba" />
+        <item
+            android:id="@+id/spavaca_soba"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Spavaca soba" />
+
+        <item
+            android:id="@+id/drugi_uredjaji"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Drugi uredjaji" />
+
+    </group>
+
+    <item android:title="Podesavanja">
+        <menu>
+
+
+
+            <item
+                android:id="@+id/podesavanja"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Podesavanja" />
+
+        </menu>
+    </item>
+
+    <item android:title="About">
+        <menu>
+
+
+
+            <item
+                android:id="@+id/info"
+                android:icon="@drawable/ic_info"
+                android:title="Info" />
+        </menu>
+    </item>
+
+
+</menu>

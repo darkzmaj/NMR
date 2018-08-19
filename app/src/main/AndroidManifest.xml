@@ -36,12 +36,20 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait"
         </activity>
+        <activity android:name=".Activity5" />
         <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"
+            android:name=".DrawerMain"
+            android:label="@string/title_activity_drawer_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity5" />
-        <activity android:name=".Drawer_activity_pokusaj1"></activity>
+        <activity
+            android:name=".Drawer2DnevnaSoba"
+            android:label="@string/title_activity_drawer2_dnevna_soba"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".slika_test" />
+        <activity
+            android:name=".Drawer3SpavacaSoba"
+            android:label="@string/title_activity_drawer_spavaca_soba"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

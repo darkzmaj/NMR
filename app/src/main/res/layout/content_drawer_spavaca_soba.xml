@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Drawer_activity_pokusaj1">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Drawer3SpavacaSoba"
+    tools:showIn="@layout/app_bar_drawer_spavaca_soba">
 
 </android.support.constraint.ConstraintLayout>
