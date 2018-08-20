@@ -56,7 +56,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Podesavanja" />
         <activity android:name=".Info" />
-        <activity android:name=".DrugiUredjaji"></activity>
+        <activity android:name=".DrugiUredjaji" />
+        <activity android:name=".Udaljen" />
+        <activity android:name=".Lokal"></activity>
     </application>
 
 </manifest>
