@@ -5,17 +5,18 @@
     <string name="button3">Vikendica</string>
     <string name="glavni_meni">Glavni meni</string>
     <string name="title_activity_main2">Andruino</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Otvori fioku</string>
+    <string name="navigation_drawer_close">Zatvori fioku</string>
     <string name="nav_header_title">NMR Projekat</string>
     <string name="nav_header_subtitle">abc.j.jovan@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Podesavanja 1</string> <!-- Ovo su one tri tackice u gornjem desnom uglu ekrana -->
+    <string name="action_settings">Podesavanja</string> <!-- Ovo su one tri tackice u gornjem desnom uglu ekrana -->
     <string name="pin_broj">PIN broj</string>
     <string name="login">Login</string>
     <string name="login_tekst">Primer numerickog logina</string>
     <string name="title_activity_drawer_main">Andruino Glavni Meni</string>
     <string name="title_activity_drawer2_dnevna_soba">Andruino Dnevna Soba</string>
     <string name="title_activity_drawer_spavaca_soba">Andruino Spavaca Soba</string>
+    <string name="title_activity_drawer1_interfon">Andruino Interfon</string>
 
 </resources>

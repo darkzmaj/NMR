@@ -49,7 +49,14 @@
         <activity
             android:name=".Drawer3SpavacaSoba"
             android:label="@string/title_activity_drawer_spavaca_soba"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Drawer1Interfon"
+            android:label="@string/title_activity_drawer1_interfon"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Podesavanja" />
+        <activity android:name=".Info" />
+        <activity android:name=".DrugiUredjaji"></activity>
     </application>
 
 </manifest>

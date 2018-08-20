@@ -18,13 +18,14 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 
-public class Drawer3SpavacaSoba extends AppCompatActivity
+public class Drawer1Interfon extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     WebView webview;
+    Button glavniMeniDug;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drawer3_spavaca_soba);
+        setContentView(R.layout.drawer1_interfon);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -38,7 +39,6 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         webview = (WebView) findViewById(R.id.webView);
 
         WebSettings webSettings = webview.getSettings();
@@ -47,8 +47,20 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105");
+        webview.loadUrl("http://abcvladimir.myfreeip.me:6061/");
 
+        glavniMeniDug = (Button) findViewById(R.id.button4);
+        glavniMeniDug.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                glavniMeni();
+            }
+        });
+    }
+    public void glavniMeni(){
+        Intent intent = new Intent(this, DrawerMain.class);
+
+        startActivity(intent);
     }
 
 
@@ -65,7 +77,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.drawer_spavaca_soba, menu);
+        getMenuInflater().inflate(R.menu.drawer1_interfon, menu);
         return true;
     }
 

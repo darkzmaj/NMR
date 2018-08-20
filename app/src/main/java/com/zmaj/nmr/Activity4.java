@@ -25,7 +25,7 @@ public class Activity4 extends AppCompatActivity {
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.1.106");
+        webview.loadUrl("http://192.168.5.106");
 
         glavniMeniDug = (Button) findViewById(R.id.button6);
         glavniMeniDug.setOnClickListener(new View.OnClickListener(){

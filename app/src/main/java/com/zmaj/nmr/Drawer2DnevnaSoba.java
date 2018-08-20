@@ -13,10 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class Drawer2DnevnaSoba extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    WebView webview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,14 +27,7 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -41,6 +37,16 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        webview = (WebView) findViewById(R.id.webView);
+
+        WebSettings webSettings = webview.getSettings();
+
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.setWebViewClient(new WebViewClient());
+
+        webview.loadUrl("http://192.168.5.105");
+
     }
 
     @Override
@@ -86,14 +92,27 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
             Intent intent = new Intent(this, DrawerMain.class);
             startActivity(intent);
         } else if (id == R.id.interfon) {
-            Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
+            Intent intent = new Intent(this, Drawer1Interfon.class);
             startActivity(intent);
         } else if (id == R.id.dnevna_soba) {
+            Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.spavaca_soba) {
+            Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.drugi_uredjaji) {
+            Intent intent = new Intent(this, DrugiUredjaji.class);
+            startActivity(intent);
 
-        } else if (id == R.id.drugi_uredjaji) {
-
+        }
+        else if (id == R.id.podesavanja) {
+            Intent intent = new Intent(this, Podesavanja.class);
+            startActivity(intent);
         } else if (id == R.id.info) {
-
+            Intent intent = new Intent(this, Info.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

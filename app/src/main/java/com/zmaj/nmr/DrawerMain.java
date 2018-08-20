@@ -68,17 +68,17 @@ public class DrawerMain extends AppCompatActivity
 
     }
     public void openActivity2(){
-        Intent intent = new Intent(this, Activity2.class);
+        Intent intent = new Intent(this, Drawer1Interfon.class);
         startActivity(intent);
     }
 
     public void openActivity3(){
-        Intent intent = new Intent(this, Activity3.class);
+        Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
         startActivity(intent);
     }
 
     public void openActivity4(){
-        Intent intent = new Intent(this, Activity4.class);
+        Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
         startActivity(intent);
     }
 
@@ -127,14 +127,27 @@ public class DrawerMain extends AppCompatActivity
             Intent intent = new Intent(this, DrawerMain.class);
             startActivity(intent);
         } else if (id == R.id.interfon) {
-            Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
+            Intent intent = new Intent(this, Drawer1Interfon.class);
             startActivity(intent);
         } else if (id == R.id.dnevna_soba) {
+Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
+startActivity(intent);
+        }
+        else if (id == R.id.spavaca_soba) {
+            Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.drugi_uredjaji) {
+            Intent intent = new Intent(this, DrugiUredjaji.class);
+            startActivity(intent);
 
-        } else if (id == R.id.drugi_uredjaji) {
-
+        }
+        else if (id == R.id.podesavanja) {
+            Intent intent = new Intent(this, Podesavanja.class);
+            startActivity(intent);
         } else if (id == R.id.info) {
-
+            Intent intent = new Intent(this, Podesavanja.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
