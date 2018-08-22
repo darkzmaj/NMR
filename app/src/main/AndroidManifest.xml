@@ -16,15 +16,15 @@
             android:screenOrientation="portrait"
         </activity>
         <activity
-            android:name=".Activity2"
+            android:name=".StareAktivnosti.Activity2"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity3"
+            android:name=".StareAktivnosti.Activity3"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity4"
+            android:name=".StareAktivnosti.Activity4"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity android:name=".LoginActivity">
@@ -36,7 +36,7 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait"
         </activity>
-        <activity android:name=".Activity5" />
+        <activity android:name=".StareAktivnosti.Activity5" />
         <activity
             android:name=".DrawerMain"
             android:label="@string/title_activity_drawer_main"
@@ -56,9 +56,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Podesavanja" />
         <activity android:name=".Info" />
-        <activity android:name=".DrugiUredjaji" />
-        <activity android:name=".Udaljen" />
-        <activity android:name=".Lokal"></activity>
+        <activity android:name=".DrugiUredjaji.DrugiUredjaji" />
+        <activity android:name=".DrugiUredjaji.Udaljen" />
+        <activity android:name=".DrugiUredjaji.Lokal"></activity>
     </application>
 
 </manifest>

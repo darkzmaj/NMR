@@ -9,16 +9,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
-        android:text="@string/login"
+        android:text="Adresa lokalnog uređaja"
         android:textSize="25sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/adresa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:hint="ovo je hint"
+        android:hint="Poslednja dva broja: xxx.xxx"
         android:ems="10"
 
         android:inputType="textEmailAddress" />
@@ -29,6 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@color/colorAccent"
-        android:text="Udji"
+        android:text="Povezi se"
         android:textColor="@android:color/white" />
 </LinearLayout>

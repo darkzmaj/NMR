@@ -1,4 +1,5 @@
 package com.zmaj.nmr;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,18 +22,18 @@ public class LoginActivity extends AppCompatActivity {
     private Button Login;
     private ImageButton imgDugme;
     private ImageView image;
-
+    private String test;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        pin = (EditText)findViewById(R.id.editText);
+        pin = (EditText) findViewById(R.id.editText);
         // info = (TextView)findViewById(R.id.textView);
 
         Login = (Button) findViewById(R.id.btnLogin);
-//bitno samo 'new onCl' i autocomplete ce da odradi za login
+            //bitno samo 'new onCl' i autocomplete ce da odradi za login
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-imgDugme = (ImageButton)findViewById(R.id.imageButton);
+        imgDugme = (ImageButton) findViewById(R.id.imageButton);
         imgDugme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,8 +53,9 @@ imgDugme = (ImageButton)findViewById(R.id.imageButton);
         });
 
     }
-    private void validate(String pin){
-        if(pin.equals("")){
+
+    private void validate(String pin) {
+        if (pin.equals("")) {
             Intent intent = new Intent(LoginActivity.this, DrawerMain.class);
             Toast.makeText(LoginActivity.this, "Tacna sifra", Toast.LENGTH_LONG).show();
             startActivity(intent);
@@ -61,8 +63,7 @@ imgDugme = (ImageButton)findViewById(R.id.imageButton);
 
             //
 
-        }
-        else{
+        } else {
             Toast.makeText(LoginActivity.this, "Pogresna sifra", Toast.LENGTH_LONG).show();
         }
     }

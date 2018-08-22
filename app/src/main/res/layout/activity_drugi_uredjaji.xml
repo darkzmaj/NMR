@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".DrugiUredjaji">
+    tools:context=".DrugiUredjaji.DrugiUredjaji">
 
     <Button
         android:id="@+id/btnUdaljen"
@@ -33,13 +33,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="115dp"
         android:text="Vrsta uređaja"
+        android:textColor="@android:color/background_light"
         android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/btnShowDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:text="Button" />
 </RelativeLayout>

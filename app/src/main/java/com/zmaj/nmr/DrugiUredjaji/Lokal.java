@@ -1,4 +1,4 @@
-package com.zmaj.nmr;
+package com.zmaj.nmr.DrugiUredjaji;
 
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.zmaj.nmr.R;
+
 public class Lokal extends AppCompatActivity {
     WebView webview;
 
@@ -19,8 +21,8 @@ public class Lokal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_udaljen);
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(Lokal.this);
-        View mView = getLayoutInflater().inflate(R.layout.dialog_login, null);
-        final EditText mEmail = (EditText) mView.findViewById(R.id.etEmail);
+        View mView = getLayoutInflater().inflate(R.layout.dialog_lokal, null);
+        final EditText adresa = (EditText) mView.findViewById(R.id.adresa);
 
         Button mLogin = (Button) mView.findViewById(R.id.btnLogin);
 
@@ -33,11 +35,11 @@ public class Lokal extends AppCompatActivity {
             public void onClick(View view) {
 
                 Toast.makeText(Lokal.this,
-                        "lol da",
+                        "Uspeh",
                         Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
 
-                String test ="http://192.168.5." + mEmail.getText().toString();
+                String test ="http://192.168." + adresa.getText().toString();
 
                 webview = (WebView) findViewById(R.id.webView);
 

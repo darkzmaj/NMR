@@ -1,4 +1,4 @@
-package com.zmaj.nmr;
+package com.zmaj.nmr.StareAktivnosti;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,13 +9,16 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 
-public class Activity4 extends AppCompatActivity {
+import com.zmaj.nmr.DrawerMain;
+import com.zmaj.nmr.R;
+
+public class Activity3 extends AppCompatActivity {
     WebView webview;
     private Button glavniMeniDug;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_4);
+        setContentView(R.layout.activity_3);
 
         webview = (WebView) findViewById(R.id.webView);
 
@@ -25,9 +28,9 @@ public class Activity4 extends AppCompatActivity {
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.106");
+        webview.loadUrl("http://192.168.5.105");
 
-        glavniMeniDug = (Button) findViewById(R.id.button6);
+        glavniMeniDug = (Button) findViewById(R.id.button5);
         glavniMeniDug.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -42,5 +45,5 @@ public class Activity4 extends AppCompatActivity {
     }
 
 
-}
+    }
 

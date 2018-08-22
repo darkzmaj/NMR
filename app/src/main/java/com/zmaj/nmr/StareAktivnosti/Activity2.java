@@ -1,4 +1,4 @@
-package com.zmaj.nmr;
+package com.zmaj.nmr.StareAktivnosti;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+
+import com.zmaj.nmr.DrawerMain;
+import com.zmaj.nmr.R;
 
 public class Activity2 extends AppCompatActivity {
     WebView webview;

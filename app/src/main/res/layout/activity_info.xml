@@ -54,6 +54,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="148dp"
-        android:text="Glavni @string/glavni_meni" />
+        android:text="@string/glavni_meni" />
 
 </RelativeLayout>

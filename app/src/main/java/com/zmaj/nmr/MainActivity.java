@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.zmaj.nmr.StareAktivnosti.Activity2;
+import com.zmaj.nmr.StareAktivnosti.Activity3;
+import com.zmaj.nmr.StareAktivnosti.Activity4;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button interfonBut;
