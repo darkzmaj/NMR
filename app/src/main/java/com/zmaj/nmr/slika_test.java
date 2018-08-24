@@ -21,7 +21,7 @@ public class slika_test extends AppCompatActivity {
 
         p1.i = 33;
 
-        b1 = (Button) findViewById(R.id.button10);
+
         b1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

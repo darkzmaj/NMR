@@ -58,7 +58,7 @@
         <activity android:name=".Info" />
         <activity android:name=".DrugiUredjaji.DrugiUredjaji" />
         <activity android:name=".DrugiUredjaji.Udaljen" />
-        <activity android:name=".DrugiUredjaji.Lokal"></activity>
+        <activity android:name=".DrugiUredjaji.Lokal" />
     </application>
 
 </manifest>

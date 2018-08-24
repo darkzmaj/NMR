@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -33,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         // info = (TextView)findViewById(R.id.textView);
 
         Login = (Button) findViewById(R.id.btnLogin);
-            //bitno samo 'new onCl' i autocomplete ce da odradi za login
+        //bitno samo 'new onCl' i autocomplete ce da odradi za login
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,5 +71,20 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    //ovo je sasvim ok resenje za disable back button
+    /* @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(LoginActivity.this,LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    */
 
+    //ovo resenje se pokazalo kao bolje
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
+    }
 }
+
+

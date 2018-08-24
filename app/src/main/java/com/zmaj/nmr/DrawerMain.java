@@ -1,7 +1,9 @@
 package com.zmaj.nmr;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -29,7 +31,6 @@ public class DrawerMain extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -40,45 +41,45 @@ public class DrawerMain extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         interfon = (Button) findViewById(R.id.btnInterfon);
-        interfon.setOnClickListener(new View.OnClickListener(){
+        interfon.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 openActivity2();
             }
         });
 
         dnevnaSoba = (Button) findViewById(R.id.btnDnevnaSoba);
-        dnevnaSoba.setOnClickListener(new View.OnClickListener(){
+        dnevnaSoba.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 openActivity3();
             }
         });
 
         spavacaSoba = (Button) findViewById(R.id.btnSpavacaSoba);
-        spavacaSoba.setOnClickListener(new View.OnClickListener(){
+        spavacaSoba.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 openActivity4();
             }
         });
 
     }
-    public void openActivity2(){
+
+    public void openActivity2() {
         Intent intent = new Intent(this, Drawer1Interfon.class);
         startActivity(intent);
     }
 
-    public void openActivity3(){
+    public void openActivity3() {
         Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
         startActivity(intent);
     }
 
-    public void openActivity4(){
+    public void openActivity4() {
         Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
         startActivity(intent);
     }
-
 
 
     @Override
@@ -127,28 +128,56 @@ public class DrawerMain extends AppCompatActivity
             Intent intent = new Intent(this, Drawer1Interfon.class);
             startActivity(intent);
         } else if (id == R.id.dnevna_soba) {
-Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
-startActivity(intent);
-        }
-        else if (id == R.id.spavaca_soba) {
+            Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
+            startActivity(intent);
+        } else if (id == R.id.spavaca_soba) {
             Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
             startActivity(intent);
-        }
-        else if (id == R.id.drugi_uredjaji) {
+        } else if (id == R.id.drugi_uredjaji) {
             Intent intent = new Intent(this, DrugiUredjaji.class);
             startActivity(intent);
 
-        }
-        else if (id == R.id.podesavanja) {
+        } else if (id == R.id.podesavanja) {
             Intent intent = new Intent(this, Podesavanja.class);
             startActivity(intent);
         } else if (id == R.id.info) {
             Intent intent = new Intent(this, Info.class);
             startActivity(intent);
+        } else if (id == R.id.logout) {
+                       //ovo se pokazalo ok
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (which){
+                        case DialogInterface.BUTTON_POSITIVE:
+                            logout();
+
+                            break;
+
+                        case DialogInterface.BUTTON_NEGATIVE:
+                            //No button clicked
+                            break;
+                    }
+                }
+            };
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Provera");
+            builder.setMessage("Da li ste sigurni?").setPositiveButton("Da", dialogClickListener)
+                    .setNegativeButton("Ne", dialogClickListener).show();
+            //
+
+
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void logout(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }

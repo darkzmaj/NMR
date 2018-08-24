@@ -1,7 +1,9 @@
 package com.zmaj.nmr;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -128,10 +130,40 @@ public class Drawer1Interfon extends AppCompatActivity
         } else if (id == R.id.info) {
             Intent intent = new Intent(this, Info.class);
             startActivity(intent);
+        }else if (id == R.id.logout) {
+            //ovo se pokazalo ok
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (which){
+                        case DialogInterface.BUTTON_POSITIVE:
+                            logout();
+
+                            break;
+
+                        case DialogInterface.BUTTON_NEGATIVE:
+                            //No button clicked
+                            break;
+                    }
+                }
+            };
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Provera");
+            builder.setMessage("Da li ste sigurni?").setPositiveButton("Da", dialogClickListener)
+                    .setNegativeButton("Ne", dialogClickListener).show();
+            //
+
+
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public void logout(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }

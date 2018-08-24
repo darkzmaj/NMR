@@ -52,6 +52,11 @@
                 android:id="@+id/info"
                 android:icon="@drawable/ic_info"
                 android:title="Info" />
+
+            <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Izloguj se" />
         </menu>
     </item>
 

@@ -4,37 +4,151 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".slika_test">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/stan" />
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="132dp"
-        android:layout_height="98dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="42dp">
+
+        <ToggleButton
+            android:id="@+id/toggBtn"
+            android:layout_width="116dp"
+            android:layout_height="77dp"
+
+
+            android:layout_centerVertical="true"
+
+            android:layout_weight="1"
+            android:width="50dp"
+            android:height="50dp"
+            android:gravity="center" />
+
+        <ToggleButton
+            android:id="@+id/toggBtn2"
+            android:layout_width="116dp"
+            android:layout_height="77dp"
+
+
+            android:layout_centerVertical="true"
+
+            android:layout_weight="1"
+            android:width="50dp"
+            android:height="50dp"
+            android:gravity="center" />
+
+        <ToggleButton
+            android:id="@+id/toggBtn3"
+            android:layout_width="116dp"
+            android:layout_height="77dp"
+
+
+            android:layout_centerVertical="true"
+
+            android:layout_weight="1"
+            android:width="50dp"
+            android:height="50dp"
+            android:gravity="center" />
+
+        <ToggleButton
+            android:id="@+id/toggBtn4"
+            android:layout_width="116dp"
+            android:layout_height="77dp"
+
+
+            android:layout_centerVertical="true"
+
+            android:layout_weight="1"
+            android:width="50dp"
+            android:height="50dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="172dp">
+
+        <ToggleButton
+            android:id="@+id/toggBt5"
+            android:layout_width="116dp"
+            android:layout_height="77dp"
+
+
+            android:layout_centerVertical="true"
+
+            android:layout_weight="1"
+            android:width="50dp"
+            android:height="50dp"
+            android:gravity="center" />
+
+        <ToggleButton
+            android:id="@+id/toggBtn6"
+            android:layout_width="116dp"
+            android:layout_height="77dp"
+
+
+            android:layout_centerVertical="true"
+
+            android:layout_weight="1"
+            android:width="50dp"
+            android:height="50dp"
+            android:gravity="center" />
+
+        <ToggleButton
+            android:id="@+id/toggBtn7"
+            android:layout_width="116dp"
+            android:layout_height="77dp"
+
+
+            android:layout_centerVertical="true"
+
+            android:layout_weight="1"
+            android:width="50dp"
+            android:height="50dp"
+            android:gravity="center" />
+
+        <ToggleButton
+            android:id="@+id/toggBtn8"
+            android:layout_width="116dp"
+            android:layout_height="77dp"
+
+
+            android:layout_centerVertical="true"
+
+            android:layout_weight="1"
+            android:width="50dp"
+            android:height="50dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="197dp"
-        android:layout_marginStart="21dp"
-        android:background="#00000000"
-        android:text="Soba dnevna"
-        android:visibility="visible" />
+        android:layout_marginBottom="130dp">
 
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:text="Interfon"
-        android:layout_marginTop="126dp"
-        android:background="#00000000"
-        />
+        <Button
+            android:id="@+id/btnUkljuciSve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/btnIskljuciSve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Iskljuci sve" />
+    </LinearLayout>
+
 
 </RelativeLayout>

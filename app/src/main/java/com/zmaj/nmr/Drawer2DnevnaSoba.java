@@ -1,24 +1,37 @@
 package com.zmaj.nmr;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.zmaj.nmr.DrugiUredjaji.DrugiUredjaji;
 
 public class Drawer2DnevnaSoba extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     WebView webview;
+    Button btn1;
+    Button btn2;
+    Button btn3;
+    Button btn4;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +39,62 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        btn1 = (Button) findViewById(R.id.btnDnevnaSobaSvetloON);
+        btn2 = (Button) findViewById(R.id.btnDnevnaSobaSvetloOFF);
+        btn3 = (Button) findViewById(R.id.btnDnevnaSobaLedON);
+        btn4 = (Button) findViewById(R.id.btnDnevnaSobaLedOFF);
+
+
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //ovo dugme treba da ukljucuje lampu lampu
+                ukljuciLampe();
+//
+                Handler handler=new Handler();
+                Runnable r=new Runnable() {
+                    public void run() {
+                        //ovde se pise zadatak
+                        //ako je 10, ima neki cudan bag da prvi pritisak ukljucuje jednu lampu, drugi drugu.
+                        ukljuciLedTrake();
+                        //iskljuciLedTrake();
+                    }
+                };
+                handler.postDelayed(r, 5000);
+
+
+
+//
+
+//
+
+//
+            }
+
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iskljuciLampe();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ukljuciLedTrake();
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iskljuciLedTrake();
+            }
+        });
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -47,6 +116,8 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
         webview.loadUrl("http://192.168.5.105");
 
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -96,26 +167,128 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
         } else if (id == R.id.dnevna_soba) {
             Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
             startActivity(intent);
-        }
-        else if (id == R.id.spavaca_soba) {
+        } else if (id == R.id.spavaca_soba) {
             Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
             startActivity(intent);
-        }
-        else if (id == R.id.drugi_uredjaji) {
+        } else if (id == R.id.drugi_uredjaji) {
             Intent intent = new Intent(this, DrugiUredjaji.class);
             startActivity(intent);
 
-        }
-        else if (id == R.id.podesavanja) {
+        } else if (id == R.id.podesavanja) {
             Intent intent = new Intent(this, Podesavanja.class);
             startActivity(intent);
         } else if (id == R.id.info) {
             Intent intent = new Intent(this, Info.class);
             startActivity(intent);
+        }else if (id == R.id.logout) {
+            //ovo se pokazalo ok
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (which){
+                        case DialogInterface.BUTTON_POSITIVE:
+                            logout();
+
+                            break;
+
+                        case DialogInterface.BUTTON_NEGATIVE:
+                            //Ne
+                            break;
+                    }
+                }
+            };
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Provera");
+            builder.setMessage("Da li ste sigurni?").setPositiveButton("Da", dialogClickListener)
+                    .setNegativeButton("Ne", dialogClickListener).show();
+            //
+
+
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void logout(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+
+
+
+
+    //
+
+
+
+    void ukljuciLampe() {
+        webview = (WebView) findViewById(R.id.webView);
+
+        WebSettings webSettings = webview.getSettings();
+
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.setWebViewClient(new WebViewClient());
+
+        webview.loadUrl("http://192.168.5.105/5/on");
+    }
+
+    void iskljuciLampe() {
+        webview = (WebView) findViewById(R.id.webView);
+
+        WebSettings webSettings = webview.getSettings();
+
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.setWebViewClient(new WebViewClient());
+
+        webview.loadUrl("http://192.168.5.105/5/off");
+    }
+
+    void ukljuciLedTrake() {
+        webview = (WebView) findViewById(R.id.webView);
+
+        WebSettings webSettings = webview.getSettings();
+
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.setWebViewClient(new WebViewClient());
+
+        webview.loadUrl("http://192.168.5.105/4/on");
+    }
+
+    void iskljuciLedTrake() {
+        webview = (WebView) findViewById(R.id.webView);
+
+        WebSettings webSettings = webview.getSettings();
+
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.setWebViewClient(new WebViewClient());
+
+        webview.loadUrl("http://192.168.5.105/4/off");
+
+
+    }
+
+    //
+    public interface DelayCallback{
+        void afterDelay();
+    }
+
+    public static void delay(int secs, final DelayCallback delayCallback){
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                delayCallback.afterDelay();
+            }
+        }, secs * 1000); // afterDelay will be executed after (secs*1000) milliseconds.
+    }
+    //
+
 }
