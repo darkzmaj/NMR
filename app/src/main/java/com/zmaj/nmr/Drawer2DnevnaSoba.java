@@ -18,8 +18,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import com.zmaj.nmr.DrugiUredjaji.DrugiUredjaji;
 
@@ -168,7 +166,7 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
             Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.spavaca_soba) {
-            Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
+            Intent intent = new Intent(this, Drawer3RadnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.drugi_uredjaji) {
             Intent intent = new Intent(this, DrugiUredjaji.class);

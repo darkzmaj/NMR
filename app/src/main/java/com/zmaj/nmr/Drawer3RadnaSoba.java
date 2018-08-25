@@ -23,19 +23,11 @@ import android.widget.ToggleButton;
 
 import com.zmaj.nmr.DrugiUredjaji.DrugiUredjaji;
 
-public class Drawer3SpavacaSoba extends AppCompatActivity
+public class Drawer3RadnaSoba extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     WebView webview;
-    ToggleButton btnToggle1;
-    ToggleButton btnToggle2;
-    ToggleButton btnToggle3;
-    ToggleButton btnToggle4;
-    ToggleButton btnToggle5;
-    ToggleButton btnToggle6;
-    ToggleButton btnToggle7;
-    ToggleButton btnToggle8;
-    Button btnUkljuciSve;
-    Button btnIskljuciSve;
+    ToggleButton btnToggle1, btnToggle2,btnToggle3, btnToggle4,btnToggle5,btnToggle6,btnToggle7,btnToggle8 ;
+    Button btnUkljuciSve, btnIskljuciSve;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -323,7 +315,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
             Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.spavaca_soba) {
-            Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
+            Intent intent = new Intent(this, Drawer3RadnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.drugi_uredjaji) {
             Intent intent = new Intent(this, DrugiUredjaji.class);
@@ -570,6 +562,14 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
         webview.setWebViewClient(new WebViewClient());
 
         webview.loadUrl("http://192.168.5.105/redno/on");
+        btnToggle1.setChecked(true);
+        btnToggle2.setChecked(true);
+        btnToggle3.setChecked(true);
+        btnToggle4.setChecked(true);
+        btnToggle5.setChecked(true);
+        btnToggle6.setChecked(true);
+        btnToggle7.setChecked(true);
+        btnToggle8.setChecked(true);
     }
 
     public void iskljuciSve(){
@@ -582,5 +582,14 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
         webview.setWebViewClient(new WebViewClient());
 
         webview.loadUrl("http://192.168.5.105/redno/off");
+
+        btnToggle1.setChecked(false);
+        btnToggle2.setChecked(false);
+        btnToggle3.setChecked(false);
+        btnToggle4.setChecked(false);
+        btnToggle5.setChecked(false);
+        btnToggle6.setChecked(false);
+        btnToggle7.setChecked(false);
+        btnToggle8.setChecked(false);
     }
 }

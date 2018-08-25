@@ -2,7 +2,7 @@
     <string name="app_name">Andruino</string>
     <string name="button1">Interfon</string>
     <string name="button2">Dnevna soba</string>
-    <string name="button3">Vikendica</string>
+    <string name="button3">Radna Soba</string>
     <string name="glavni_meni">Glavni meni</string>
     <string name="title_activity_main2">Andruino</string>
     <string name="navigation_drawer_open">Otvori fioku</string>
@@ -16,7 +16,7 @@
     <string name="login_tekst">Primer numerickog logina</string>
     <string name="title_activity_drawer_main">Andruino Glavni Meni</string>
     <string name="title_activity_drawer2_dnevna_soba">Andruino Dnevna Soba</string>
-    <string name="title_activity_drawer_spavaca_soba">Andruino Spavaca Soba</string>
+    <string name="title_activity_drawer_radna_soba">Andruino Radna Soba</string>
     <string name="title_activity_drawer1_interfon">Andruino Interfon</string>
 
 </resources>

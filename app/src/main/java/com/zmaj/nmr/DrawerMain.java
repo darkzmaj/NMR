@@ -56,7 +56,7 @@ public class DrawerMain extends AppCompatActivity
             }
         });
 
-        spavacaSoba = (Button) findViewById(R.id.btnSpavacaSoba);
+        spavacaSoba = (Button) findViewById(R.id.btnRadnaSoba);
         spavacaSoba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +77,7 @@ public class DrawerMain extends AppCompatActivity
     }
 
     public void openActivity4() {
-        Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
+        Intent intent = new Intent(this, Drawer3RadnaSoba.class);
         startActivity(intent);
     }
 
@@ -131,7 +131,7 @@ public class DrawerMain extends AppCompatActivity
             Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.spavaca_soba) {
-            Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
+            Intent intent = new Intent(this, Drawer3RadnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.drugi_uredjaji) {
             Intent intent = new Intent(this, DrugiUredjaji.class);

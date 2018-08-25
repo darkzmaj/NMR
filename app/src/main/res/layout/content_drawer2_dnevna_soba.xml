@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Drawer2DnevnaSoba"
     tools:showIn="@layout/app_bar_drawer2_dnevna_soba">
@@ -16,8 +17,8 @@
 
     <Button
         android:id="@+id/btnDnevnaSobaSvetloON"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="75dp"
@@ -26,8 +27,8 @@
 
     <Button
         android:id="@+id/btnDnevnaSobaSvetloOFF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/btnDnevnaSobaSvetloON"
         android:layout_marginEnd="82dp"
@@ -35,20 +36,19 @@
 
     <Button
         android:id="@+id/btnDnevnaSobaLedON"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignEnd="@+id/btnDnevnaSobaSvetloON"
         android:layout_centerVertical="true"
         android:text="Led svetla on" />
 
     <Button
         android:id="@+id/btnDnevnaSobaLedOFF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignStart="@+id/btnDnevnaSobaSvetloOFF"
         android:layout_centerVertical="true"
         android:text="Led svetla off" />
-
 
 
 </RelativeLayout>
