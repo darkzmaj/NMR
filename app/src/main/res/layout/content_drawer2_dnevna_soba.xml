@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Drawer2DnevnaSoba"
     tools:showIn="@layout/app_bar_drawer2_dnevna_soba"
@@ -16,40 +15,66 @@
         android:layout_height="1dp"
         android:layout_centerHorizontal="true" />
 
+
     <Button
+        android:id="@+id/btnUkljuciCeluKucu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="63dp"
+        android:layout_marginStart="27dp"
+        android:text="Ukljuci celu kucu" />
+
+    <Button
+        android:id="@+id/btnIskljuciCeluKucu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="63dp"
+        android:layout_marginEnd="27dp"
+        android:text="Iskljuci celu kucu" />
+
+    <ImageButton
+        android:id="@+id/btnDnevnaSobaLedOFF"
+        android:layout_width="84dp"
+        android:layout_height="79dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/btnDnevnaSobaLedON"
+        android:layout_marginEnd="71dp"
+        android:background="@null"
+        android:src="@drawable/television_screen_off" />
+
+    <ImageButton
+        android:id="@+id/btnDnevnaSobaSvetloOFF"
+        android:layout_width="84dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginStart="48dp"
+        android:background="@null"
+        android:src="@drawable/bulb_off" />
+
+    <ImageButton
         android:id="@+id/btnDnevnaSobaSvetloON"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="84dp"
+        android:layout_height="79dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="200dp"
+        android:layout_marginStart="48dp"
+        android:background="@null"
+        android:src="@drawable/lightbulb" />
+
+    <ImageButton
+        android:id="@+id/btnDnevnaSobaLedON"
+        android:layout_width="84dp"
+        android:layout_height="79dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="117dp"
-        android:text="Lampa on" />
-
-    <Button
-        android:id="@+id/btnDnevnaSobaSvetloOFF"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/btnDnevnaSobaSvetloON"
-        android:layout_marginEnd="82dp"
-        android:text="Lampa off" />
-
-    <Button
-        android:id="@+id/btnDnevnaSobaLedON"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignEnd="@+id/btnDnevnaSobaSvetloON"
-        android:layout_centerVertical="true"
-        android:text="Led svetla on" />
-
-    <Button
-        android:id="@+id/btnDnevnaSobaLedOFF"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignStart="@+id/btnDnevnaSobaSvetloOFF"
-        android:layout_centerVertical="true"
-        android:text="Led svetla off" />
-
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="72dp"
+        android:background="@null"
+        android:src="@drawable/play_video_on_screen" />
 
 </RelativeLayout>

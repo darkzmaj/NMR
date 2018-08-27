@@ -27,38 +27,40 @@
             android:name=".StareAktivnosti.Activity4"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LoginActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"
+                <action
+                    android:name="android.intent.action.MAIN"
                     android:configChanges="orientation"
-                    android:screenOrientation="portrait"/>
+                    android:screenOrientation="portrait" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".StareAktivnosti.Activity5" />
         <activity
             android:name=".DrawerMain"
-            android:label="@string/title_activity_drawer_main"
-            android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:label="@string/title_activity_drawer_main"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Drawer2DnevnaSoba"
             android:label="@string/title_activity_drawer2_dnevna_soba"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".slika_test"
+        <activity
+            android:name=".slika_test"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Drawer3RadnaSoba"
-            android:label="@string/title_activity_drawer_spavaca_soba"
-            android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:label="@string/title_activity_drawer_radna_soba"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Drawer1Interfon"
             android:label="@string/title_activity_drawer1_interfon"
@@ -68,6 +70,9 @@
         <activity android:name=".DrugiUredjaji.DrugiUredjaji" />
         <activity android:name=".DrugiUredjaji.Udaljen" />
         <activity android:name=".DrugiUredjaji.Lokal" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>

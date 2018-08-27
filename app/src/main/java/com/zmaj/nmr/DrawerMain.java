@@ -138,7 +138,7 @@ public class DrawerMain extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.podesavanja) {
-            Intent intent = new Intent(this, Podesavanja.class);
+            Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
         } else if (id == R.id.info) {
             Intent intent = new Intent(this, Info.class);

@@ -2,7 +2,10 @@ package com.zmaj.nmr;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,6 +21,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.zmaj.nmr.DrugiUredjaji.DrugiUredjaji;
 
@@ -28,66 +32,138 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
     Button btn2;
     Button btn3;
     Button btn4;
+    Button btnUkljuciCeluKucu;
+    Button btnIskljuciCeluKucu;
+    ImageButton img1, img2, img3, img4;
 
+    //
+    public interface DelayCallback{
+        void afterDelay();
+    }
+
+    public static void delay(int secs, final DelayCallback delayCallback){
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                delayCallback.afterDelay();
+            }
+        }, secs * 1000);
+    }
+
+    //
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer2_dnevna_soba);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        btn1 = (Button) findViewById(R.id.btnDnevnaSobaSvetloON);
-        btn2 = (Button) findViewById(R.id.btnDnevnaSobaSvetloOFF);
-        btn3 = (Button) findViewById(R.id.btnDnevnaSobaLedON);
-        btn4 = (Button) findViewById(R.id.btnDnevnaSobaLedOFF);
+        img1 = (ImageButton) findViewById(R.id.btnDnevnaSobaSvetloON);
+        img2 = (ImageButton) findViewById(R.id.btnDnevnaSobaSvetloOFF);
+        img3 = (ImageButton) findViewById(R.id.btnDnevnaSobaLedON);
+        img4 = (ImageButton) findViewById(R.id.btnDnevnaSobaLedOFF);
+
+        btnUkljuciCeluKucu = (Button) findViewById(R.id.btnUkljuciCeluKucu);
+        btnIskljuciCeluKucu = (Button)findViewById(R.id.btnIskljuciCeluKucu);
+
+btnUkljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+
+        int secs = 1; // Delay in seconds
+
+        delay(secs, new DelayCallback() {
+            @Override
+            public void afterDelay() {
+                // Do something after delay
+                ukljuciLampe();
+                delay(1, new DelayCallback() {
+                    @Override
+                    public void afterDelay() {
+                        // Do something after delay
+                        ukljuciLedTrake();
+
+                        delay(1, new DelayCallback() {
+                            @Override
+                            public void afterDelay() {
+                                // Do something after delay
+                                ukljuciSveNode();
+
+                            }
+                        });
+
+                    }
+                });
+
+            }
+        });
 
 
 
+    }
+});
 
-        btn1.setOnClickListener(new View.OnClickListener() {
+btnIskljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        int secs = 1; // Delay in seconds
+
+        delay(secs, new DelayCallback() {
+            @Override
+            public void afterDelay() {
+                // Do something after delay
+                iskljuciLampe();
+                delay(1, new DelayCallback() {
+                    @Override
+                    public void afterDelay() {
+                        // Do something after delay
+                        iskljuciLedTrake();
+
+                        delay(1, new DelayCallback() {
+                            @Override
+                            public void afterDelay() {
+                                // Do something after delay
+                                iskljuciSveNode();
+
+                            }
+                        });
+
+                    }
+                });
+
+            }
+        });
+    }
+});
+
+
+        img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //ovo dugme treba da ukljucuje lampu lampu
                 ukljuciLampe();
 //
-                Handler handler=new Handler();
-                Runnable r=new Runnable() {
-                    public void run() {
-                        //ovde se pise zadatak
-                        //ako je 10, ima neki cudan bag da prvi pritisak ukljucuje jednu lampu, drugi drugu.
-                        ukljuciLedTrake();
-                        //iskljuciLedTrake();
-                    }
-                };
-                handler.postDelayed(r, 5000);
-
-
-
-//
-
-//
-
-//
             }
 
         });
 
-        btn2.setOnClickListener(new View.OnClickListener() {
+        img2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 iskljuciLampe();
             }
         });
 
-        btn3.setOnClickListener(new View.OnClickListener() {
+        img3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ukljuciLedTrake();
             }
         });
 
-        btn4.setOnClickListener(new View.OnClickListener() {
+        img4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 iskljuciLedTrake();
@@ -173,7 +249,7 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.podesavanja) {
-            Intent intent = new Intent(this, Podesavanja.class);
+            Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
         } else if (id == R.id.info) {
             Intent intent = new Intent(this, Info.class);
@@ -273,20 +349,33 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
 
     }
 
-    //
-    public interface DelayCallback{
-        void afterDelay();
+
+
+//NodeMCU redno
+
+    public void ukljuciSveNode(){
+        webview = (WebView) findViewById(R.id.webView);
+
+        WebSettings webSettings = webview.getSettings();
+
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.setWebViewClient(new WebViewClient());
+
+        webview.loadUrl("http://192.168.5.107/redno/on");
     }
 
-    public static void delay(int secs, final DelayCallback delayCallback){
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                delayCallback.afterDelay();
-            }
-        }, secs * 1000); // afterDelay will be executed after (secs*1000) milliseconds.
-    }
-    //
+    public void iskljuciSveNode(){
+        webview = (WebView) findViewById(R.id.webView);
 
+        WebSettings webSettings = webview.getSettings();
+
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.setWebViewClient(new WebViewClient());
+
+        webview.loadUrl("http://192.168.5.107/redno/off");
+    }
+
+    //
 }

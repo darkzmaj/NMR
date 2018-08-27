@@ -70,7 +70,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 if (btnToggle1.isChecked()) {
                     ukljuci1();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast ukljucen!";
+                    CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -78,7 +78,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 } else {
                     iskljuci1();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast iskljucen!";
+                    CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -95,7 +95,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 if (btnToggle2.isChecked()) {
                     ukljuci2();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast ukljucen!";
+                    CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -103,7 +103,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 } else {
                     iskljuci2();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast iskljucen!";
+                    CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -117,7 +117,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 if (btnToggle3.isChecked()) {
                     ukljuci3();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast ukljucen!";
+                    CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -125,7 +125,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 } else {
                     iskljuci3();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast iskljucen!";
+                    CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -139,7 +139,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 if (btnToggle4.isChecked()) {
                     ukljuci4();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast ukljucen!";
+                    CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -147,7 +147,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 } else {
                     iskljuci4();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast iskljucen!";
+                    CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -161,7 +161,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 if (btnToggle5.isChecked()) {
                     ukljuci5();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast ukljucen!";
+                    CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -169,7 +169,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 } else {
                     iskljuci5();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast iskljucen!";
+                    CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -183,7 +183,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 if (btnToggle6.isChecked()) {
                     ukljuci6();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast ukljucen!";
+                    CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -191,7 +191,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 } else {
                     iskljuci6();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast iskljucen!";
+                    CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -205,7 +205,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 if (btnToggle7.isChecked()) {
                     ukljuci7();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast ukljucen!";
+                    CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -213,7 +213,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 } else {
                     iskljuci7();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast iskljucen!";
+                    CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -227,7 +227,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 if (btnToggle8.isChecked()) {
                     ukljuci8();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast ukljucen!";
+                    CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -235,7 +235,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 } else {
                     iskljuci8();
                     Context context = getApplicationContext();
-                    CharSequence text = "Hello toast iskljucen!";
+                    CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -330,7 +330,7 @@ public class Drawer3RadnaSoba extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.podesavanja) {
-            Intent intent = new Intent(this, Podesavanja.class);
+            Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
         } else if (id == R.id.info) {
             Intent intent = new Intent(this, Info.class);
@@ -570,6 +570,15 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         webview.setWebViewClient(new WebViewClient());
 
         webview.loadUrl("http://192.168.5.107/redno/on");
+
+        btnToggle1.setChecked(true);
+        btnToggle2.setChecked(true);
+        btnToggle3.setChecked(true);
+        btnToggle4.setChecked(true);
+        btnToggle5.setChecked(true);
+        btnToggle6.setChecked(true);
+        btnToggle7.setChecked(true);
+        btnToggle8.setChecked(true);
     }
 
     public void iskljuciSve(){
@@ -582,5 +591,14 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         webview.setWebViewClient(new WebViewClient());
 
         webview.loadUrl("http://192.168.5.107/redno/off");
+
+        btnToggle1.setChecked(false);
+        btnToggle2.setChecked(false);
+        btnToggle3.setChecked(false);
+        btnToggle4.setChecked(false);
+        btnToggle5.setChecked(false);
+        btnToggle6.setChecked(false);
+        btnToggle7.setChecked(false);
+        btnToggle8.setChecked(false);
     }
 }

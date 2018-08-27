@@ -26,10 +26,7 @@
         <ToggleButton
             android:id="@+id/toggBtn1"
             android:layout_width="116dp"
-
-
             android:layout_height="77dp"
-
             android:layout_centerVertical="true"
             android:layout_weight="1"
             android:width="50dp"
@@ -40,10 +37,7 @@
             android:id="@+id/toggBtn2"
             android:layout_width="116dp"
             android:layout_height="77dp"
-
-
             android:layout_centerVertical="true"
-
             android:layout_weight="1"
             android:width="50dp"
             android:height="50dp"
@@ -53,23 +47,16 @@
             android:id="@+id/toggBtn3"
             android:layout_width="116dp"
             android:layout_height="77dp"
-
-
             android:layout_centerVertical="true"
-
             android:layout_weight="1"
             android:width="50dp"
             android:height="50dp"
             android:gravity="center" />
-
         <ToggleButton
             android:id="@+id/toggBtn4"
             android:layout_width="116dp"
             android:layout_height="77dp"
-
-
             android:layout_centerVertical="true"
-
             android:layout_weight="1"
             android:width="50dp"
             android:height="50dp"
@@ -82,13 +69,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="172dp">
-
         <ToggleButton
             android:id="@+id/toggBtn5"
             android:layout_width="116dp"
             android:layout_height="77dp"
-
-
             android:layout_centerVertical="true"
 
             android:layout_weight="1"
