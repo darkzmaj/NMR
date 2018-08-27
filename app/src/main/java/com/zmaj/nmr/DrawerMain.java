@@ -56,7 +56,7 @@ public class DrawerMain extends AppCompatActivity
             }
         });
 
-        spavacaSoba = (Button) findViewById(R.id.btnSpavacaSoba);
+        spavacaSoba = (Button) findViewById(R.id.btnRadnaSoba);
         spavacaSoba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
