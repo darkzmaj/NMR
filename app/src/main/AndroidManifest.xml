@@ -6,9 +6,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_andruino"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_andruino_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -27,29 +27,38 @@
             android:name=".StareAktivnosti.Activity4"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"
+                    android:configChanges="orientation"
+                    android:screenOrientation="portrait"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
+
         </activity>
         <activity android:name=".StareAktivnosti.Activity5" />
         <activity
             android:name=".DrawerMain"
             android:label="@string/title_activity_drawer_main"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Drawer2DnevnaSoba"
             android:label="@string/title_activity_drawer2_dnevna_soba"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".slika_test" />
+        <activity android:name=".slika_test"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".Drawer3SpavacaSoba"
+            android:name=".Drawer3RadnaSoba"
             android:label="@string/title_activity_drawer_spavaca_soba"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Drawer1Interfon"
             android:label="@string/title_activity_drawer1_interfon"

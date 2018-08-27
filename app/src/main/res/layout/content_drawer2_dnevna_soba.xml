@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Drawer2DnevnaSoba"
-    tools:showIn="@layout/app_bar_drawer2_dnevna_soba">
+    tools:showIn="@layout/app_bar_drawer2_dnevna_soba"
+    android:background="@drawable/gradient">
 
     <WebView
         android:id="@+id/webView"

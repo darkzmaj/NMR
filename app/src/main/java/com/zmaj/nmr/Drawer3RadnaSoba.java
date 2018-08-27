@@ -23,7 +23,7 @@ import android.widget.ToggleButton;
 
 import com.zmaj.nmr.DrugiUredjaji.DrugiUredjaji;
 
-public class Drawer3SpavacaSoba extends AppCompatActivity
+public class Drawer3RadnaSoba extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     WebView webview;
     ToggleButton btnToggle1;
@@ -40,7 +40,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drawer3_spavaca_soba);
+        setContentView(R.layout.drawer3_radna_soba);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         btnToggle1 = (ToggleButton) findViewById(R.id.toggBtn1);
@@ -269,7 +269,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105");
+        webview.loadUrl("http://192.168.5.107");
 ///webview deo
     }
 
@@ -287,7 +287,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.drawer_spavaca_soba, menu);
+        getMenuInflater().inflate(R.menu.drawer_radna_soba, menu);
         return true;
     }
 
@@ -323,7 +323,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
             Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.spavaca_soba) {
-            Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
+            Intent intent = new Intent(this, Drawer3RadnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.drugi_uredjaji) {
             Intent intent = new Intent(this, DrugiUredjaji.class);
@@ -381,7 +381,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/13/on");
+        webview.loadUrl("http://192.168.5.107/13/on");
     }
 
     public void iskljuci1() {
@@ -393,7 +393,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/13/off");
+        webview.loadUrl("http://192.168.5.107/13/off");
     }
 
 
@@ -407,7 +407,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/12/on");
+        webview.loadUrl("http://192.168.5.107/12/on");
     }
 
     public void iskljuci2() {
@@ -419,7 +419,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/12/off");
+        webview.loadUrl("http://192.168.5.107/12/off");
     }
     public void ukljuci3() {
         webview = (WebView) findViewById(R.id.webView);
@@ -430,7 +430,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/14/on");
+        webview.loadUrl("http://192.168.5.107/14/on");
     }
 
     public void iskljuci3() {
@@ -442,7 +442,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/14/off");
+        webview.loadUrl("http://192.168.5.107/14/off");
     }
     public void ukljuci4() {
         webview = (WebView) findViewById(R.id.webView);
@@ -453,7 +453,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/2/on");
+        webview.loadUrl("http://192.168.5.107/2/on");
     }
 
     public void iskljuci4() {
@@ -465,7 +465,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/2/off");
+        webview.loadUrl("http://192.168.5.107/2/off");
     }
     public void ukljuci5() {
         webview = (WebView) findViewById(R.id.webView);
@@ -476,7 +476,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/0/on");
+        webview.loadUrl("http://192.168.5.107/0/on");
     }
 
     public void iskljuci5() {
@@ -488,7 +488,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/0/off");
+        webview.loadUrl("http://192.168.5.107/0/off");
     }
     public void ukljuci6() {
         webview = (WebView) findViewById(R.id.webView);
@@ -499,7 +499,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/4/on");
+        webview.loadUrl("http://192.168.5.107/4/on");
     }
 
     public void iskljuci6() {
@@ -511,7 +511,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/4/off");
+        webview.loadUrl("http://192.168.5.107/4/off");
     }
     public void ukljuci7() {
         webview = (WebView) findViewById(R.id.webView);
@@ -522,7 +522,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/5/on");
+        webview.loadUrl("http://192.168.5.107/5/on");
     }
 
     public void iskljuci7() {
@@ -534,7 +534,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/5/off");
+        webview.loadUrl("http://192.168.5.107/5/off");
     }
     public void ukljuci8() {
         webview = (WebView) findViewById(R.id.webView);
@@ -545,7 +545,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/16/on");
+        webview.loadUrl("http://192.168.5.107/16/on");
     }
 
     public void iskljuci8() {
@@ -557,7 +557,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/16/off");
+        webview.loadUrl("http://192.168.5.107/16/off");
     }
 
     public void ukljuciSve(){
@@ -569,7 +569,7 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/redno/on");
+        webview.loadUrl("http://192.168.5.107/redno/on");
     }
 
     public void iskljuciSve(){
@@ -581,6 +581,6 @@ public class Drawer3SpavacaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/redno/off");
+        webview.loadUrl("http://192.168.5.107/redno/off");
     }
 }

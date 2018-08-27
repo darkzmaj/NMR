@@ -116,7 +116,7 @@ public class Drawer1Interfon extends AppCompatActivity
             startActivity(intent);
         }
         else if (id == R.id.spavaca_soba) {
-            Intent intent = new Intent(this, Drawer3SpavacaSoba.class);
+            Intent intent = new Intent(this, Drawer3RadnaSoba.class);
             startActivity(intent);
         }
         else if (id == R.id.drugi_uredjaji) {
