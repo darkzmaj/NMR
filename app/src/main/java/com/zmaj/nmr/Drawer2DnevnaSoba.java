@@ -37,11 +37,11 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
     ImageButton img1, img2, img3, img4;
 
     //
-    public interface DelayCallback{
+    public interface DelayCallback {
         void afterDelay();
     }
 
-    public static void delay(int secs, final DelayCallback delayCallback){
+    public static void delay(int secs, final DelayCallback delayCallback) {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -60,72 +60,75 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        btn1 = (Button) findViewById(R.id.btn1);
+        btn2 = (Button) findViewById(R.id.btn2);
+        btn3 = (Button) findViewById(R.id.btn3);
+        btn4 = (Button) findViewById(R.id.btn4);
+
+
         img1 = (ImageButton) findViewById(R.id.btnDnevnaSobaSvetloON);
         img2 = (ImageButton) findViewById(R.id.btnDnevnaSobaSvetloOFF);
         img3 = (ImageButton) findViewById(R.id.btnDnevnaSobaLedON);
         img4 = (ImageButton) findViewById(R.id.btnDnevnaSobaLedOFF);
 
+
         btnUkljuciCeluKucu = (Button) findViewById(R.id.btnUkljuciCeluKucu);
-        btnIskljuciCeluKucu = (Button)findViewById(R.id.btnIskljuciCeluKucu);
+        btnIskljuciCeluKucu = (Button) findViewById(R.id.btnIskljuciCeluKucu);
 
-btnUkljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-
-        int secs = 1; // Delay in seconds
-
-        delay(secs, new DelayCallback() {
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void afterDelay() {
-                // Do something after delay
+            public void onClick(View view) {
+                ukljuciLedTrake();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iskljuciLedTrake();
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 ukljuciLampe();
-                delay(1, new DelayCallback() {
-                    @Override
-                    public void afterDelay() {
-                        // Do something after delay
-                        ukljuciLedTrake();
-
-                        delay(1, new DelayCallback() {
-                            @Override
-                            public void afterDelay() {
-                                // Do something after delay
-                                ukljuciSveNode();
-
-                            }
-                        });
-
-                    }
-                });
-
             }
         });
 
-
-
-    }
-});
-
-btnIskljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        int secs = 1; // Delay in seconds
-
-        delay(secs, new DelayCallback() {
+        btn4.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void afterDelay() {
-                // Do something after delay
+            public void onClick(View view) {
                 iskljuciLampe();
-                delay(1, new DelayCallback() {
+            }
+        });
+
+
+        btnUkljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int secs = 1;
+
+                delay(secs, new DelayCallback() {
                     @Override
                     public void afterDelay() {
-                        // Do something after delay
-                        iskljuciLedTrake();
 
+                        ukljuciLampe();
                         delay(1, new DelayCallback() {
                             @Override
                             public void afterDelay() {
-                                // Do something after delay
-                                iskljuciSveNode();
+
+                                ukljuciLedTrake();
+
+                                delay(1, new DelayCallback() {
+                                    @Override
+                                    public void afterDelay() {
+
+                                        ukljuciSveNode();
+
+                                    }
+                                });
 
                             }
                         });
@@ -133,10 +136,36 @@ btnIskljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
                     }
                 });
 
+
             }
         });
-    }
-});
+
+        btnIskljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int secs = 1;
+                delay(secs, new DelayCallback() {
+                    @Override
+                    public void afterDelay() {
+                        iskljuciLampe();
+                        delay(1, new DelayCallback() {
+                            @Override
+                            public void afterDelay() {
+                                iskljuciLedTrake();
+                                delay(1, new DelayCallback() {
+                                    @Override
+                                    public void afterDelay() {
+                                        iskljuciSveNode();
+
+
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
 
 
         img1.setOnClickListener(new View.OnClickListener() {
@@ -190,7 +219,6 @@ btnIskljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
         webview.loadUrl("http://192.168.5.105");
 
     }
-
 
 
     @Override
@@ -254,12 +282,12 @@ btnIskljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
         } else if (id == R.id.info) {
             Intent intent = new Intent(this, Info.class);
             startActivity(intent);
-        }else if (id == R.id.logout) {
+        } else if (id == R.id.logout) {
             //ovo se pokazalo ok
             DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    switch (which){
+                    switch (which) {
                         case DialogInterface.BUTTON_POSITIVE:
                             logout();
 
@@ -279,24 +307,20 @@ btnIskljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
             //
 
 
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void logout(){
+
+    public void logout() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 
 
-
-
-
     //
-
 
 
     void ukljuciLampe() {
@@ -349,11 +373,60 @@ btnIskljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
 
     }
 
+    void ukljuciV1() {
+        webview = (WebView) findViewById(R.id.webView);
+
+        WebSettings webSettings = webview.getSettings();
+
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.setWebViewClient(new WebViewClient());
+
+        webview.loadUrl("http://192.168.5.106/4/on");
+
+
+    }
+
+    void iskljuciV1() {
+        webview = (WebView) findViewById(R.id.webView);
+
+        WebSettings webSettings = webview.getSettings();
+
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.setWebViewClient(new WebViewClient());
+
+        webview.loadUrl("http://192.168.5.106/4/off");
+
+
+    }
+
+
+    void ukljuciV2() {
+        webview = (WebView) findViewById(R.id.webView);
+
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webview.setWebViewClient(new WebViewClient());
+        webview.loadUrl("http://192.168.5.106/5/on");
+    }
+
+    void iskljuciV2() {
+        webview = (WebView) findViewById(R.id.webView);
+
+        WebSettings webSettings = webview.getSettings();
+
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.setWebViewClient(new WebViewClient());
+
+        webview.loadUrl("http://192.168.5.106/5/off");
+    }
 
 
 //NodeMCU redno
 
-    public void ukljuciSveNode(){
+    public void ukljuciSveNode() {
         webview = (WebView) findViewById(R.id.webView);
 
         WebSettings webSettings = webview.getSettings();
@@ -365,7 +438,7 @@ btnIskljuciCeluKucu.setOnClickListener(new View.OnClickListener() {
         webview.loadUrl("http://192.168.5.107/redno/on");
     }
 
-    public void iskljuciSveNode(){
+    public void iskljuciSveNode() {
         webview = (WebView) findViewById(R.id.webView);
 
         WebSettings webSettings = webview.getSettings();

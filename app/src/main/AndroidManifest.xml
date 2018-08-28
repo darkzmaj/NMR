@@ -49,6 +49,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Drawer2DnevnaSoba"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_drawer2_dnevna_soba"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -58,9 +60,9 @@
         <activity
             android:name=".Drawer3RadnaSoba"
             android:configChanges="orientation"
-            android:label="@string/title_activity_drawer_radna_soba"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+                        android:label="@string/title_activity_drawer_radna_soba"
+                      android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Drawer1Interfon"
             android:label="@string/title_activity_drawer1_interfon"
