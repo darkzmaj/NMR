@@ -2,7 +2,9 @@ package com.zmaj.nmr;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -55,6 +57,24 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         btnIskljuciSve = (Button) findViewById(R.id.btnIskljuciSve);
         btnUlazUKucu = (Button) findViewById(R.id.btnUlazUKucu);
         btnIzlazIzKuce = (Button) findViewById(R.id.btnIzlazIzKuce);
+        //
+        btnToggle1.setChecked(getDefaults("nesto1", this));
+        setDefaults("nesto1", btnToggle1.isChecked(), this);
+        btnToggle2.setChecked(getDefaults("nesto2", this));
+        setDefaults("nesto2", btnToggle2.isChecked(), this);
+        btnToggle3.setChecked(getDefaults("nesto3", this));
+        setDefaults("nesto3", btnToggle3.isChecked(), this);
+        btnToggle4.setChecked(getDefaults("nesto4", this));
+        setDefaults("nesto4", btnToggle4.isChecked(), this);
+        btnToggle5.setChecked(getDefaults("nesto5", this));
+        setDefaults("nesto5", btnToggle5.isChecked(), this);
+        btnToggle6.setChecked(getDefaults("nesto6", this));
+        setDefaults("nesto6", btnToggle6.isChecked(), this);
+        btnToggle7.setChecked(getDefaults("nesto7", this));
+        setDefaults("nesto7", btnToggle7.isChecked(), this);
+        btnToggle8.setChecked(getDefaults("nesto8", this));
+        setDefaults("nesto8", btnToggle8.isChecked(), this);
+        //
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -63,6 +83,9 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         //
+
+
+
         btnToggle1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -288,6 +311,38 @@ public class Drawer3RadnaSoba extends AppCompatActivity
     }
 
     @Override
+    public void onStart(){
+        super.onStart();
+
+        btnToggle1.setChecked(getDefaults("nesto1",this));
+        btnToggle2.setChecked(getDefaults("nesto2",this));
+        btnToggle3.setChecked(getDefaults("nesto3",this));
+        btnToggle4.setChecked(getDefaults("nesto4",this));
+        btnToggle5.setChecked(getDefaults("nesto5",this));
+        btnToggle6.setChecked(getDefaults("nesto6",this));
+        btnToggle7.setChecked(getDefaults("nesto7",this));
+        btnToggle8.setChecked(getDefaults("nesto8",this));
+
+    }
+
+
+    @Override
+    public void onStop(){
+        super.onStop();
+
+        setDefaults("nesto1", btnToggle1.isChecked(), this);
+        setDefaults("nesto2", btnToggle2.isChecked(), this);
+        setDefaults("nesto3", btnToggle3.isChecked(), this);
+        setDefaults("nesto4", btnToggle4.isChecked(), this);
+        setDefaults("nesto5", btnToggle5.isChecked(), this);
+        setDefaults("nesto6", btnToggle6.isChecked(), this);
+        setDefaults("nesto7", btnToggle7.isChecked(), this);
+        setDefaults("nesto8", btnToggle8.isChecked(), this);
+
+    }
+
+
+    @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -334,6 +389,12 @@ public class Drawer3RadnaSoba extends AppCompatActivity
 
     //pokusaj restore
 
+
+    //pokusaj cuvanja 2
+
+
+
+    //pokusaj 2 end
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -569,4 +630,21 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         btnToggle7.setChecked(false);
         btnToggle8.setChecked(false);
     }
+
+//kod za cuvanje stanja
+    public static void setDefaults(String key, Boolean value, Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean(key, value);
+        editor.commit();
+    }
+
+
+    public static Boolean getDefaults(String key, Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return preferences.getBoolean(key, true);
+    }
+
+    //kraj koda za cuvanje stanja
+
 }
