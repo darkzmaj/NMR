@@ -19,9 +19,9 @@
             android:icon="@drawable/ic_dnevna"
             android:title="Dnevna soba" />
         <item
-            android:id="@+id/spavaca_soba"
+            android:id="@+id/radna_soba"
             android:icon="@drawable/ic_spavaca"
-            android:title="Spavaca soba" />
+            android:title="Radna Soba" />
 
         <item
             android:id="@+id/drugi_uredjaji"

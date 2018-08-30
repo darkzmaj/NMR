@@ -2,10 +2,7 @@ package com.zmaj.nmr;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -269,7 +266,7 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
         } else if (id == R.id.dnevna_soba) {
             Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
             startActivity(intent);
-        } else if (id == R.id.spavaca_soba) {
+        } else if (id == R.id.radna_soba) {
             Intent intent = new Intent(this, Drawer3RadnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.drugi_uredjaji) {
@@ -332,7 +329,7 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/5/on");
+        webview.loadUrl("http://192.168.5.200/light1on");
     }
 
     void iskljuciLampe() {
@@ -344,7 +341,7 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/5/off");
+        webview.loadUrl("http://192.168.5.200/light1off");
     }
 
     void ukljuciLedTrake() {
@@ -356,7 +353,7 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/4/on");
+        webview.loadUrl("http://192.168.5.200/light2on");
     }
 
     void iskljuciLedTrake() {
@@ -368,7 +365,7 @@ public class Drawer2DnevnaSoba extends AppCompatActivity
 
         webview.setWebViewClient(new WebViewClient());
 
-        webview.loadUrl("http://192.168.5.105/4/off");
+        webview.loadUrl("http://192.168.5.200/light2off");
 
 
     }

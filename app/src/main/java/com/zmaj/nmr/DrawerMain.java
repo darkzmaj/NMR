@@ -130,7 +130,7 @@ public class DrawerMain extends AppCompatActivity
         } else if (id == R.id.dnevna_soba) {
             Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
             startActivity(intent);
-        } else if (id == R.id.spavaca_soba) {
+        } else if (id == R.id.radna_soba) {
             Intent intent = new Intent(this, Drawer3RadnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.drugi_uredjaji) {

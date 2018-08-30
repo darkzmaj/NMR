@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Drawer2DnevnaSoba"
-    tools:showIn="@layout/app_bar_drawer2_dnevna_soba"
-    android:background="@drawable/gradient">
+    tools:showIn="@layout/app_bar_drawer2_dnevna_soba">
 
     <WebView
         android:id="@+id/webView"
@@ -91,24 +91,22 @@
         android:layout_width="84dp"
         android:layout_height="79dp"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/bulb_off"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="350dp"
         android:layout_marginEnd="60dp"
         android:background="@null"
-         />
+        android:src="@drawable/bulb_off" />
 
     <ImageButton
         android:id="@+id/btnDnevnaSobaSvetloON"
         android:layout_width="84dp"
         android:layout_height="79dp"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/lightbulb"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="350dp"
         android:layout_marginStart="60dp"
         android:background="@null"
-         />
+        android:src="@drawable/lightbulb" />
 
     <ImageButton
         android:id="@+id/btnDnevnaSobaLedON"

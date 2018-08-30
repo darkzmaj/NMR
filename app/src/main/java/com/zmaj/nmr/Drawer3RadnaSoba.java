@@ -1,5 +1,4 @@
 package com.zmaj.nmr;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,7 +21,6 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.zmaj.nmr.DrugiUredjaji.DrugiUredjaji;
-
 public class Drawer3RadnaSoba extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     WebView webview;
@@ -33,9 +31,11 @@ public class Drawer3RadnaSoba extends AppCompatActivity
     ToggleButton btnToggle5;
     ToggleButton btnToggle6;
     ToggleButton btnToggle7;
-    ToggleButton btnToggle8;
+    ToggleButton btnToggle8; //imaginarni alarm
     Button btnUkljuciSve;
     Button btnIskljuciSve;
+    Button btnUlazUKucu;
+    Button btnIzlazIzKuce;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +53,13 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         btnToggle8 = (ToggleButton) findViewById(R.id.toggBtn8);
         btnUkljuciSve = (Button) findViewById(R.id.btnUkljuciSve);
         btnIskljuciSve = (Button) findViewById(R.id.btnIskljuciSve);
-
-
+        btnUlazUKucu = (Button) findViewById(R.id.btnUlazUKucu);
+        btnIzlazIzKuce = (Button) findViewById(R.id.btnIzlazIzKuce);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         //
@@ -72,7 +71,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 } else {
@@ -80,15 +78,53 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
             }
         });
-
-        ///
-        //pocetak testa
+        btnUlazUKucu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ulazUKucu();
+                Context context = getApplicationContext();
+                CharSequence text = "Sve ukljuceno, alarm iskljucen.";
+                //
+                btnToggle1.setChecked(false);
+                btnToggle2.setChecked(false);
+                btnToggle3.setChecked(false);
+                btnToggle4.setChecked(false);
+                btnToggle5.setChecked(false);
+                btnToggle6.setChecked(false);
+                btnToggle7.setChecked(false);
+                btnToggle8.setChecked(true);
+                //
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+        });
+        btnIzlazIzKuce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                izlazIzKuce();
+                Context context = getApplicationContext();
+                CharSequence text = "Sve iskljuceno, alarm ukljucen.";
+                //
+                btnToggle1.setChecked(true);
+                btnToggle2.setChecked(true);
+                btnToggle3.setChecked(true);
+                btnToggle4.setChecked(true);
+                btnToggle5.setChecked(true);
+                btnToggle6.setChecked(true);
+                btnToggle7.setChecked(true);
+                btnToggle8.setChecked(false);
+                //
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+        });
         btnToggle2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +133,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 } else {
@@ -105,7 +140,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -119,7 +153,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 } else {
@@ -127,7 +160,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -141,7 +173,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 } else {
@@ -149,7 +180,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -163,7 +193,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 } else {
@@ -171,7 +200,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -185,7 +213,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 } else {
@@ -193,7 +220,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -207,7 +233,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 } else {
@@ -215,7 +240,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
@@ -229,7 +253,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je uključen!";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 } else {
@@ -237,42 +260,32 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     Context context = getApplicationContext();
                     CharSequence text = "Uređaj je isključen.";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
                 }
             }
         });
         //kraj testa
-
         btnUkljuciSve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ukljuciSve();
             }
         });
-
         btnIskljuciSve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 iskljuciSve();
             }
         });
-
-
 //webview deo
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107");
 ///webview deo
     }
-
 
     @Override
     public void onBackPressed() {
@@ -297,21 +310,37 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
+
+    //pokusaj restore
+
+//    @Override
+//    public void onRestoreInstanceState(Bundle savedInstanceState) {
+//        super.onRestoreInstanceState(savedInstanceState);
+//        // Restore UI state from the savedInstanceState.
+//        // This bundle has also been passed to onCreate.
+//        boolean myBoolean = savedInstanceState.getBoolean("MyBoolean");
+//        double myDouble = savedInstanceState.getDouble("myDouble");
+//        int myInt = savedInstanceState.getInt("MyInt");
+//        String myString = savedInstanceState.getString("MyString");
+//
+//        //btnToggle1.setChecked(false);
+//    }
+
+    //pokusaj restore
+
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         if (id == R.id.g_meni) {
             // Handle the camera action
             Intent intent = new Intent(this, DrawerMain.class);
@@ -322,13 +351,12 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         } else if (id == R.id.dnevna_soba) {
             Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
             startActivity(intent);
-        } else if (id == R.id.spavaca_soba) {
+        } else if (id == R.id.radna_soba) {
             Intent intent = new Intent(this, Drawer3RadnaSoba.class);
             startActivity(intent);
         } else if (id == R.id.drugi_uredjaji) {
             Intent intent = new Intent(this, DrugiUredjaji.class);
             startActivity(intent);
-
         } else if (id == R.id.podesavanja) {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
@@ -343,28 +371,38 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                     switch (which) {
                         case DialogInterface.BUTTON_POSITIVE:
                             logout();
-
                             break;
-
                         case DialogInterface.BUTTON_NEGATIVE:
                             //No button clicked
                             break;
                     }
                 }
             };
-
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Provera");
             builder.setMessage("Da li ste sigurni?").setPositiveButton("Da", dialogClickListener)
                     .setNegativeButton("Ne", dialogClickListener).show();
             //
-
-
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void ulazUKucu() {
+        webview = (WebView) findViewById(R.id.webView);
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webview.setWebViewClient(new WebViewClient());
+        webview.loadUrl("http://192.168.5.107/ulazUKucu");
+    }
+
+    public void izlazIzKuce() {
+        webview = (WebView) findViewById(R.id.webView);
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webview.setWebViewClient(new WebViewClient());
+        webview.loadUrl("http://192.168.5.107/izlazIzKuce");
     }
 
     public void logout() {
@@ -374,203 +412,138 @@ public class Drawer3RadnaSoba extends AppCompatActivity
 
     public void ukljuci1() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/13/on");
     }
 
     public void iskljuci1() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/13/off");
     }
 
-
-
     public void ukljuci2() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/12/on");
     }
 
     public void iskljuci2() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/12/off");
     }
+
     public void ukljuci3() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/14/on");
     }
 
     public void iskljuci3() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/14/off");
     }
+
     public void ukljuci4() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/2/on");
     }
 
     public void iskljuci4() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/2/off");
     }
+
     public void ukljuci5() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/0/on");
     }
 
     public void iskljuci5() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/0/off");
     }
+
     public void ukljuci6() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/4/on");
     }
 
     public void iskljuci6() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/4/off");
     }
+
     public void ukljuci7() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/5/on");
     }
 
     public void iskljuci7() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/5/off");
     }
+
     public void ukljuci8() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/16/on");
     }
 
     public void iskljuci8() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/16/off");
     }
 
-    public void ukljuciSve(){
+    public void ukljuciSve() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/redno/on");
-
         btnToggle1.setChecked(true);
         btnToggle2.setChecked(true);
         btnToggle3.setChecked(true);
@@ -581,17 +554,12 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         btnToggle8.setChecked(true);
     }
 
-    public void iskljuciSve(){
+    public void iskljuciSve() {
         webview = (WebView) findViewById(R.id.webView);
-
         WebSettings webSettings = webview.getSettings();
-
         webSettings.setJavaScriptEnabled(true);
-
         webview.setWebViewClient(new WebViewClient());
-
         webview.loadUrl("http://192.168.5.107/redno/off");
-
         btnToggle1.setChecked(false);
         btnToggle2.setChecked(false);
         btnToggle3.setChecked(false);

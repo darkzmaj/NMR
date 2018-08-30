@@ -115,7 +115,7 @@ public class Drawer1Interfon extends AppCompatActivity
             Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
             startActivity(intent);
         }
-        else if (id == R.id.spavaca_soba) {
+        else if (id == R.id.radna_soba) {
             Intent intent = new Intent(this, Drawer3RadnaSoba.class);
             startActivity(intent);
         }
