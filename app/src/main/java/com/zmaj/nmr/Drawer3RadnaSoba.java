@@ -38,6 +38,8 @@ public class Drawer3RadnaSoba extends AppCompatActivity
     Button btnIskljuciSve;
     Button btnUlazUKucu;
     Button btnIzlazIzKuce;
+    Button btnRad;
+    Button btnSpavanje;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,12 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         btnIskljuciSve = (Button) findViewById(R.id.btnIskljuciSve);
         btnUlazUKucu = (Button) findViewById(R.id.btnUlazUKucu);
         btnIzlazIzKuce = (Button) findViewById(R.id.btnIzlazIzKuce);
-        //
+        btnRad = (Button) findViewById(R.id.btnRad);
+        btnSpavanje = (Button) findViewById(R.id.btnSpavanje);
+        //Ovaj deo koda cuva stanje ToggleButton-a,
+        //u trenutku kada se napusti activity.
+        //Cuva cak i kada se aplikacija potpuno iskljuci,
+        //sto se pokazalo vise nego korisno.
         btnToggle1.setChecked(getDefaults("nesto1", this));
         setDefaults("nesto1", btnToggle1.isChecked(), this);
         btnToggle2.setChecked(getDefaults("nesto2", this));
@@ -82,10 +89,36 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        //
-
-
-
+        //Pocetak OnClickListener-a za dugmad:
+        btnRad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rad();
+                btnToggle1.setChecked(true);    //Svetlo Dnevna Soba
+                btnToggle2.setChecked(true);    //Svetlo hodnik
+                btnToggle3.setChecked(false);   //Svetlo Kuhinja
+                btnToggle4.setChecked(false);   //Svetlo Spavaca Soba
+                btnToggle5.setChecked(true);    //Kompjuter
+                btnToggle6.setChecked(false);   //Televizor
+                btnToggle7.setChecked(true);    //Klima
+                btnToggle8.setChecked(false);   //Alarm
+            }
+        });
+        btnSpavanje.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                spavanje();
+                btnToggle1.setChecked(false);   //Svetlo Dnevna Soba
+                btnToggle2.setChecked(true);    //Svetlo hodnik
+                btnToggle3.setChecked(false);   //Svetlo Kuhinja
+                btnToggle4.setChecked(false);   //Svetlo Spavaca Soba
+                btnToggle5.setChecked(false);   //Kompjuter
+                btnToggle6.setChecked(false);   //Televizor
+                btnToggle7.setChecked(true);    //Klima
+                btnToggle8.setChecked(false);   //Alarm
+            }
+        });
+//Pocetak ToggleButton-a listenera.
         btnToggle1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -288,7 +321,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
                 }
             }
         });
-        //kraj testa
         btnUkljuciSve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -310,26 +342,23 @@ public class Drawer3RadnaSoba extends AppCompatActivity
 ///webview deo
     }
 
+    //Pocetak dela koda za cuvanje stanja ToggleButton-a.
     @Override
-    public void onStart(){
+    public void onStart() {
         super.onStart();
-
-        btnToggle1.setChecked(getDefaults("nesto1",this));
-        btnToggle2.setChecked(getDefaults("nesto2",this));
-        btnToggle3.setChecked(getDefaults("nesto3",this));
-        btnToggle4.setChecked(getDefaults("nesto4",this));
-        btnToggle5.setChecked(getDefaults("nesto5",this));
-        btnToggle6.setChecked(getDefaults("nesto6",this));
-        btnToggle7.setChecked(getDefaults("nesto7",this));
-        btnToggle8.setChecked(getDefaults("nesto8",this));
-
+        btnToggle1.setChecked(getDefaults("nesto1", this));
+        btnToggle2.setChecked(getDefaults("nesto2", this));
+        btnToggle3.setChecked(getDefaults("nesto3", this));
+        btnToggle4.setChecked(getDefaults("nesto4", this));
+        btnToggle5.setChecked(getDefaults("nesto5", this));
+        btnToggle6.setChecked(getDefaults("nesto6", this));
+        btnToggle7.setChecked(getDefaults("nesto7", this));
+        btnToggle8.setChecked(getDefaults("nesto8", this));
     }
 
-
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
-
         setDefaults("nesto1", btnToggle1.isChecked(), this);
         setDefaults("nesto2", btnToggle2.isChecked(), this);
         setDefaults("nesto3", btnToggle3.isChecked(), this);
@@ -338,9 +367,8 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         setDefaults("nesto6", btnToggle6.isChecked(), this);
         setDefaults("nesto7", btnToggle7.isChecked(), this);
         setDefaults("nesto8", btnToggle8.isChecked(), this);
-
     }
-
+    //Kraj dela koda za cuvanje stanja ToggleButton-a.
 
     @Override
     public void onBackPressed() {
@@ -371,31 +399,6 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
-
-    //pokusaj restore
-
-//    @Override
-//    public void onRestoreInstanceState(Bundle savedInstanceState) {
-//        super.onRestoreInstanceState(savedInstanceState);
-//        // Restore UI state from the savedInstanceState.
-//        // This bundle has also been passed to onCreate.
-//        boolean myBoolean = savedInstanceState.getBoolean("MyBoolean");
-//        double myDouble = savedInstanceState.getDouble("myDouble");
-//        int myInt = savedInstanceState.getInt("MyInt");
-//        String myString = savedInstanceState.getString("MyString");
-//
-//        //btnToggle1.setChecked(false);
-//    }
-
-    //pokusaj restore
-
-
-    //pokusaj cuvanja 2
-
-
-
-    //pokusaj 2 end
-
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -631,7 +634,24 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         btnToggle8.setChecked(false);
     }
 
-//kod za cuvanje stanja
+    public void rad() {
+        webview = (WebView) findViewById(R.id.webView);
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webview.setWebViewClient(new WebViewClient());
+        webview.loadUrl("http://192.168.5.107/rad");
+    }
+
+    public void spavanje() {
+        webview = (WebView) findViewById(R.id.webView);
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webview.setWebViewClient(new WebViewClient());
+        webview.loadUrl("http://192.168.5.107/spavanje");
+    }
+
+    //Kod za cuvanje stanja,
+    //saradjuje sa kodom koji je moguce naci na vrhu.
     public static void setDefaults(String key, Boolean value, Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
@@ -639,12 +659,9 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         editor.commit();
     }
 
-
     public static Boolean getDefaults(String key, Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         return preferences.getBoolean(key, true);
     }
-
     //kraj koda za cuvanje stanja
-
 }
