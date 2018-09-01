@@ -6,26 +6,18 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".DrawerMain"
-    tools:showIn="@layout/app_bar_drawer_main">
+    tools:context=".DrawerMain">
+    <!--tools:showIn="@layout/app_bar_drawer_main">-->
 
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
         app:srcCompat="@drawable/stan" />
 
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        app:srcCompat="@drawable/stan" />
 
     <Button
         android:id="@+id/btnInterfon"
@@ -41,26 +33,82 @@
         />
 
     <Button
-        android:id="@+id/btnDnevnaSoba"
+        android:id="@+id/btnSvetloDnevnaSoba"
         android:layout_width="132dp"
         android:layout_height="98dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="200dp"
-        android:layout_marginStart="18dp"
+        android:layout_alignStart="@+id/btnInterfon"
+        android:layout_below="@+id/btnInterfon"
         android:background="#00000000"
-
-        android:text="Dnevna Soba" />
+        android:text="Svetlo D.S." />
 
     <Button
-        android:id="@+id/btnRadnaSoba"
+        android:id="@+id/btnKlima"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="192dp"
+        android:background="#00000000"
+        android:text="Klima" />
+
+    <Button
+        android:id="@+id/btnAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+
+        android:layout_above="@+id/btnInterfon"
+        android:layout_alignParentStart="true"
+        android:background="#00000000"
+        android:text="Alarm" />
+
+    <Button
+        android:id="@+id/btnKompjuter"
+        android:layout_width="132dp"
+        android:layout_height="34dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/btnKlima"
+        android:background="#00000000"
+        android:text="Kompjuter" />
+
+    <Button
+        android:id="@+id/btnSvetloHodnik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="19dp"
-        android:layout_marginTop="220dp"
-        android:background="#00000000"
 
-        android:text="Radna Soba" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="282dp"
+        android:background="#00000000"
+        android:text="Svetlo Hodnik" />
+
+    <Button
+        android:id="@+id/btnSvetloKuhinja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="211dp"
+        android:layout_toEndOf="@+id/btnInterfon"
+        android:background="@null"
+        android:text="Svetlo" />
+
+    <Button
+        android:id="@+id/btnSvetloSpavacaSoba"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="210dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        android:text="Svetlo" />
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp" />
 </RelativeLayout>

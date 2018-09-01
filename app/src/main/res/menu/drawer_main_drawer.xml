@@ -15,13 +15,13 @@
             android:icon="@drawable/ic_interfon"
             android:title="Interfon" />
         <item
-            android:id="@+id/dnevna_soba"
+            android:id="@+id/vikendica"
             android:icon="@drawable/ic_dnevna"
-            android:title="Dnevna soba" />
+            android:title="Vikendica" />
         <item
-            android:id="@+id/radna_soba"
+            android:id="@+id/kuca"
             android:icon="@drawable/ic_spavaca"
-            android:title="Radna Soba" />
+            android:title="Kuca" />
 
         <item
             android:id="@+id/drugi_uredjaji"

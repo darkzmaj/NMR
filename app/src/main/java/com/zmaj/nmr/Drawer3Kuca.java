@@ -23,7 +23,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.zmaj.nmr.DrugiUredjaji.DrugiUredjaji;
-public class Drawer3RadnaSoba extends AppCompatActivity
+public class Drawer3Kuca extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     WebView webview;
     ToggleButton btnToggle1;
@@ -412,11 +412,11 @@ public class Drawer3RadnaSoba extends AppCompatActivity
         } else if (id == R.id.interfon) {
             Intent intent = new Intent(this, Drawer1Interfon.class);
             startActivity(intent);
-        } else if (id == R.id.dnevna_soba) {
-            Intent intent = new Intent(this, Drawer2DnevnaSoba.class);
+        } else if (id == R.id.vikendica) {
+            Intent intent = new Intent(this, Drawer2Vikendica.class);
             startActivity(intent);
-        } else if (id == R.id.radna_soba) {
-            Intent intent = new Intent(this, Drawer3RadnaSoba.class);
+        } else if (id == R.id.kuca) {
+            Intent intent = new Intent(this, Drawer3Kuca.class);
             startActivity(intent);
         } else if (id == R.id.drugi_uredjaji) {
             Intent intent = new Intent(this, DrugiUredjaji.class);

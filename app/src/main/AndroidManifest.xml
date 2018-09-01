@@ -48,7 +48,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Drawer2DnevnaSoba"
+            android:name=".Drawer2Vikendica"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_drawer2_dnevna_soba"
@@ -58,7 +58,7 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Drawer3RadnaSoba"
+            android:name=".Drawer3Kuca"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
                         android:label="@string/title_activity_drawer_radna_soba"
